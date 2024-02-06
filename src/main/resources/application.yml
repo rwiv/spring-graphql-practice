@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    group:
+      dev: "dev"
+      qa: "qa"
+      stage: "stage"
+      prod: "prod"
+      test: "test"
+    active: dev
+  #    active: qa
+  #    active: stage
+  #    active: prod
+logging:
+  level:
+    com.projectd: debug
