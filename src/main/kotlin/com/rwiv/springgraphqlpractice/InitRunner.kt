@@ -15,7 +15,7 @@ class InitRunner(
 ) : ApplicationRunner {
 
     override fun run(args: ApplicationArguments?) {
-        val a1 = accountRepository.save(Account("user1"))
+        val a1 = accountRepository.save(Account("user1", "1234"))
         val p1 = postRepository.save(Post("post1", a1))
         val p2 = postRepository.save(Post("post2", a1))
     }

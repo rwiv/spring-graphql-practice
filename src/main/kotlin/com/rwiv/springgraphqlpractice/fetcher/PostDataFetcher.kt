@@ -2,6 +2,10 @@ package com.rwiv.springgraphqlpractice.fetcher
 
 import com.netflix.graphql.dgs.*
 import com.rwiv.springgraphqlpractice.persistence.*
+import jakarta.servlet.http.HttpServletRequest
+import org.springframework.security.core.Authentication
+import org.springframework.security.core.annotation.AuthenticationPrincipal
+import org.springframework.web.context.request.ServletWebRequest
 
 @DgsComponent
 class PostDataFetcher(
@@ -9,7 +13,8 @@ class PostDataFetcher(
 ) {
 
     @DgsQuery
-    fun post(@InputArgument id: String): Post {
+    fun post(@InputArgument id: String, auth: Authentication, req1: ServletWebRequest, req2: HttpServletRequest): Post {
+        println(auth)
         return postRepository.findById(id.toLong()).get()
     }
 

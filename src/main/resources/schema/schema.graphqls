@@ -6,6 +6,7 @@ type Query {
 type Account {
     id: Int
     username: String
+    password: String
     posts: [Post]
 }
 
